@@ -63,7 +63,7 @@ namespace o3dgc
                                                   const BinaryStream & bstream);
         const SC3DMCStats &         GetStats()    const { return m_stats;}
         unsigned long               GetIterator() const { return m_iterator;}
-        O3DGCErrorCode              SetIterator(unsigned long iterator) { m_iterator = iterator;}
+        void                        SetIterator(unsigned long iterator) { m_iterator = iterator;}
         
 
     private:                        

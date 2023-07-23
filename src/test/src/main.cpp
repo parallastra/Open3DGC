@@ -505,9 +505,8 @@ enum Mode
 int testDynamicVectorCompression()
 {
     const std::string outFileName("lift.s3d");
-    const unsigned long N = 500;
+    const long N = 500;
     const unsigned long D = 3;
-    const unsigned long S = D*N;
     Real vectors[N*D];
     Real max[D];
     Real min[D];
@@ -1155,7 +1154,7 @@ bool LoadIFS(const std::string & fileName,
             {
                 fin >> a >> type >> n >> dim;
                 indexBufferIDs.resize(n);
-                for(unsigned long i = 0, p = 0; i < n; ++i)
+                for(unsigned long i = 0; i < n; ++i)
                 {
                     fin >> tmp;
                     fin >> indexBufferIDs[i];
@@ -1165,7 +1164,7 @@ bool LoadIFS(const std::string & fileName,
             {
                 fin >> a >> type >> n >> dim;
                 triangles.resize(n);
-                for(unsigned long i = 0, p = 0; i < n; ++i)
+                for(unsigned long i = 0; i < n; ++i)
                 {
                     fin >> tmp;
                     for(unsigned long d = 0; d < dim; ++d)
@@ -1178,7 +1177,7 @@ bool LoadIFS(const std::string & fileName,
             {
                 fin >> a >> type >> n >> dim;
                 points.resize(n);
-                for(unsigned long i = 0, p = 0; i < n; ++i)
+                for(unsigned long i = 0; i < n; ++i)
                 {
                     fin >> tmp;
                     for(unsigned long d = 0; d < dim; ++d)
@@ -1191,7 +1190,7 @@ bool LoadIFS(const std::string & fileName,
             {
                 fin >> a >> type >> n >> dim;
                 normals.resize(n);
-                for(unsigned long i = 0, p = 0; i < n; ++i)
+                for(unsigned long i = 0; i < n; ++i)
                 {
                     fin >> tmp;
                     for(unsigned long d = 0; d < dim; ++d)
@@ -1206,7 +1205,7 @@ bool LoadIFS(const std::string & fileName,
                 if (type == O3DGC_IFS_FLOAT_ATTRIBUTE_TYPE_TEXCOORD)
                 {
                     texCoords.resize(n);
-                    for(unsigned long i = 0, p = 0; i < n; ++i)
+                    for(unsigned long i = 0; i < n; ++i)
                     {
                         fin >> tmp;
                         for(unsigned long d = 0; d < dim; ++d)
